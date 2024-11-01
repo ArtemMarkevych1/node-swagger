@@ -21,8 +21,10 @@ const swaggerOptions = {
     },
     servers: [
       {
-        url: `http://localhost:${process.env.PORT}`,
-        description: 'Development server',
+        url: process.env.NODE_ENV === 'production' 
+          ? 'https://your-render-service-name.onrender.com'
+          : `http://localhost:${process.env.PORT}`,
+        description: process.env.NODE_ENV === 'production' ? 'Production server' : 'Development server',
       },
     ],
   },

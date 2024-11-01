@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: node-swagger-api
+    runtime: node
+    buildCommand: yarn install
+    startCommand: node app.js
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: MONGODB_CONNECT_URI
+        sync: false 
